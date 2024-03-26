@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import fetchData from './fetchApi'; // Import fetchData function from your API file
+import WeatherInformation from './WeatherInformation';
 
 const City = () => {
   const [city, setCity] = useState('');
@@ -42,12 +43,7 @@ const City = () => {
           <div className='max-w-xl mx-auto'>
             <div className="bg-gray-300 rounded-lg shadow-md p-8">
               <h2 className="text-xl font-semibold mb-4 text-indigo-800">Today's Weather</h2>
-              <p>Temperature: {weatherData.main.temp}°C</p>
-              <p>Description: {weatherData.weather[0].description}</p>
-              <p>Feels like: {weatherData.main.feels_like}°C</p>
-              <p>Humidity: {weatherData.main.humidity}%</p>
-              <p>Pressure: {weatherData.main.pressure}</p>
-              <p>Wind Speed: {weatherData.wind.speed}m/s</p>
+              <WeatherInformation weatherData={weatherData} />
             </div>
           </div>
         )}
